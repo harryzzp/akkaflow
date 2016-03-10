@@ -6,13 +6,22 @@
 	<groupId>de.kimrudolph</groupId>
 	<artifactId>akkaflow</artifactId>
 	<version>1.0-SNAPSHOT</version>
+	<!-- only use for war packaging -->
+	<!--<packaging>war</packaging>-->
 
 	<properties>
+		<java.version>1.8</java.version>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-		<spring-boot-version>1.2.1.RELEASE</spring-boot-version>
+		<spring-boot-version>1.3.3.RELEASE</spring-boot-version>
 		<spring-framework-version>4.2.5.RELEASE</spring-framework-version>
 		<akka-version>2.4.2</akka-version>
 	</properties>
+
+	<parent>
+		<groupId>org.springframework.boot</groupId>
+		<artifactId>spring-boot-starter-parent</artifactId>
+		<version>${spring-boot-version}</version>
+	</parent>
 
 	<dependencies>
 
@@ -24,14 +33,33 @@
 
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
-			<artifactId>spring-boot-starter</artifactId>
-			<version>${spring-boot-version}</version>
+			<artifactId>spring-boot-starter-test</artifactId>
+			<scope>test</scope>
 		</dependency>
 
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-web</artifactId>
 			<version>${spring-boot-version}</version>
+		</dependency>
+
+		<!-- only use for war packaging -->
+		<!--<dependency>-->
+			<!--<groupId>org.springframework.boot</groupId>-->
+			<!--<artifactId>spring-boot-starter-tomcat</artifactId>-->
+			<!--<scope>provided</scope>-->
+		<!--</dependency>-->
+
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-thymeleaf</artifactId>
+			<version>${spring-boot-version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-devtools</artifactId>
+			<version>${spring-boot-version}</version>
+			<optional>true</optional>
 		</dependency>
 
 		<dependency>
@@ -84,6 +112,7 @@
 
 	</dependencies>
 
+	<!-- remove below if run war packaging -->
 	<build>
 		<pluginManagement>
 			<plugins>
