@@ -12,6 +12,8 @@ import de.kimrudolph.akkaflow.extension.SpringExtension;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.boot.builder.SpringApplicationBuilder;
+import org.springframework.boot.context.web.SpringBootServletInitializer;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
@@ -68,4 +70,11 @@ public class AkkaApplication {
         system.terminate();
         system.awaitTermination();
     }
+
+//    @Override
+//    protected SpringApplicationBuilder configure(SpringApplicationBuilder application) {
+//        return application.sources(applicationClass);
+//    }
+//
+//    private static Class<AkkaApplication> applicationClass = AkkaApplication.class;
 }
