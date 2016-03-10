@@ -20,7 +20,7 @@
 	<parent>
 		<groupId>org.springframework.boot</groupId>
 		<artifactId>spring-boot-starter-parent</artifactId>
-		<version>${spring-boot-version}</version>
+		<version>1.3.3.RELEASE</version>
 	</parent>
 
 	<dependencies>
@@ -112,14 +112,15 @@
 
 	</dependencies>
 
-	<!-- remove below if run war packaging -->
+
 	<build>
+		<!-- remove below if run war packaging -->
 		<pluginManagement>
 			<plugins>
 				<plugin>
 					<groupId>org.apache.maven.plugins</groupId>
 					<artifactId>maven-compiler-plugin</artifactId>
-					<version>3.0</version>
+					<version>3.3</version>
 				</plugin>
 			</plugins>
 		</pluginManagement>
