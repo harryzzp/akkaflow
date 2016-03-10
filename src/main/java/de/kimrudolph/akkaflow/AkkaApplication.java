@@ -1,6 +1,7 @@
 package de.kimrudolph.akkaflow;
 
 
+import akka.actor.ActorContext;
 import akka.actor.ActorRef;
 import akka.actor.ActorSystem;
 import akka.actor.PoisonPill;
@@ -10,19 +11,22 @@ import de.kimrudolph.akkaflow.beans.Task;
 import de.kimrudolph.akkaflow.extension.SpringExtension;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.jdbc.core.JdbcTemplate;
+import scala.concurrent.Await;
 
 import java.util.Random;
 
 /**
  * Tool to trigger messages passed to actors.
  */
-@Configuration
-@EnableAutoConfiguration
-@ComponentScan("de.kimrudolph.akkaflow.configuration")
+//@Configuration
+//@EnableAutoConfiguration
+//@ComponentScan("de.kimrudolph.akkaflow.configuration")
+@SpringBootApplication
 public class AkkaApplication {
 
     public static void main(String[] args) throws Exception {
@@ -42,8 +46,9 @@ public class AkkaApplication {
         ActorRef supervisor = system.actorOf(
             ext.props("supervisor").withMailbox("akka.priority-mailbox"));
 
-        for (int i = 1; i < 1000; i++) {
+        for (int i = 1; i <= 1000; i++) {
             Task task = new Task("payload " + i, new Random().nextInt(99));
+            log.info("TASK==> {}", task);
             supervisor.tell(task, null);
         }
 
@@ -60,7 +65,7 @@ public class AkkaApplication {
 
         log.info("Shutting down");
 
-        system.shutdown();
+        system.terminate();
         system.awaitTermination();
     }
 }

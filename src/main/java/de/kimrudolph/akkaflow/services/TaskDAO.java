@@ -37,6 +37,7 @@ public class TaskDAO {
                         ") VALUES(?, NOW())",
                         Statement.RETURN_GENERATED_KEYS);
                 ps.setString(1, task.getPayload());
+
                 return ps;
             }
         }, holder);

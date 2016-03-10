@@ -21,4 +21,12 @@ public class Task {
     public Integer getPriority() {
         return priority;
     }
+
+    @Override
+    public String toString() {
+        return "Task{" +
+                "payload='" + payload + '\'' +
+                ", priority=" + priority +
+                '}';
+    }
 }
