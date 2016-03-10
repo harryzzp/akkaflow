@@ -29,7 +29,7 @@ import java.util.Random;
 //@EnableAutoConfiguration
 //@ComponentScan("de.kimrudolph.akkaflow.configuration")
 @SpringBootApplication
-public class AkkaApplication {
+public class AkkaApplication /*extends SpringBootServletInitializer*/ {
 
     public static void main(String[] args) throws Exception {
 

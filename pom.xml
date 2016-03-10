@@ -114,7 +114,7 @@
 
 
 	<build>
-		<!-- remove below if run war packaging -->
+
 		<pluginManagement>
 			<plugins>
 				<plugin>
@@ -125,6 +125,7 @@
 			</plugins>
 		</pluginManagement>
 
+		<!-- remove below if run war packaging -->
 		<plugins>
 			<plugin>
 				<groupId>org.springframework.boot</groupId>
