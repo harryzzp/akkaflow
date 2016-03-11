@@ -46,17 +46,17 @@ public class AkkaApplication /*extends SpringBootServletInitializer*/ {
 
         // Use the Spring Extension to create props for a named actor bean
         ActorRef supervisor = system.actorOf(
-            ext.props("supervisor").withMailbox("akka.priority-mailbox"));
+            ext.props("supervisor").withMailbox("akka.priority-mailbox"), "supervisor");
 
-        for (int i = 1; i <= 1000; i++) {
+        for (int i = 1; i <= 10; i++) {
             Task task = new Task("payload " + i, new Random().nextInt(99));
             log.info("TASK==> {}", task);
-            supervisor.tell(task, null);
+            supervisor.tell(task, ActorRef.noSender());
         }
 
         // Poison pill will be queued with a priority of 100 as the last
         // message
-        supervisor.tell(PoisonPill.getInstance(), null);
+        supervisor.tell(PoisonPill.getInstance(), ActorRef.noSender());
 
         while (!supervisor.isTerminated()) {
             Thread.sleep(100);

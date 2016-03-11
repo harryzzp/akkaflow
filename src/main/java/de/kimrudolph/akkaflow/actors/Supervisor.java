@@ -41,8 +41,8 @@ public class Supervisor extends UntypedActor {
 
         log.info("Starting up");
 
-        List<Routee> routees = new ArrayList<Routee>();
-        for (int i = 0; i < 100; i++) {
+        List<Routee> routees = new ArrayList<>();
+        for (int i = 0; i < 10; i++) {
             ActorRef actor = getContext().actorOf(springExtension.props(
                 "taskActor"));
             getContext().watch(actor);
