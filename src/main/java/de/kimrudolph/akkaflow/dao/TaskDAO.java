@@ -1,4 +1,4 @@
-package de.kimrudolph.akkaflow.services;
+package de.kimrudolph.akkaflow.dao;
 
 
 import de.kimrudolph.akkaflow.beans.Task;
