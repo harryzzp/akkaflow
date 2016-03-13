@@ -48,7 +48,7 @@ public class AkkaApplication /*extends SpringBootServletInitializer*/ {
         ActorRef supervisor = system.actorOf(
             ext.props("supervisor").withMailbox("akka.priority-mailbox"), "supervisor");
 
-        for (int i = 1; i <= 10; i++) {
+        for (int i = 1; i <= 1000; i++) {
             Task task = new Task("payload " + i, new Random().nextInt(99));
             log.info("TASK==> {}", task);
             supervisor.tell(task, ActorRef.noSender());
