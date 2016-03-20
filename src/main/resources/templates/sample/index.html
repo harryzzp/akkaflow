@@ -3,8 +3,21 @@
 <head>
     <title>Getting Started: Serving Web Content</title>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link href="https://cdn.jsdelivr.net/bootstrap/3.3.6/css/bootstrap.min.css"
+          th:href="@{/webjars/bootstrap/3.3.6/css/bootstrap.min.css}"
+          rel="stylesheet" media="screen" />
+
+    <script src="https://cdn.jsdelivr.net/jquery/2.2.2/jquery.min.js"
+            th:src="@{/webjars/jquery/2.2.2/jquery.min.js}"></script>
+
 </head>
 <body>
 <p th:text="'Hello, ' + ${company} + '!'" />
+
+<script type="text/javascript">
+    $(function () {
+        alert('Hello Thymeleaf!');
+    });
+</script>
 </body>
 </html>
