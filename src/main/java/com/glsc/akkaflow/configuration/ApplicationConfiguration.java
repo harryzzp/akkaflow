@@ -1,10 +1,10 @@
-package de.kimrudolph.akkaflow.configuration;
+package com.glsc.akkaflow.configuration;
 
 import akka.actor.ActorSystem;
+import com.glsc.akkaflow.extension.SpringExtension;
 import com.mchange.v2.c3p0.ComboPooledDataSource;
 import com.typesafe.config.Config;
 import com.typesafe.config.ConfigFactory;
-import de.kimrudolph.akkaflow.extension.SpringExtension;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.Bean;
@@ -17,8 +17,8 @@ import java.util.Properties;
 
 @Configuration
 @Lazy
-@ComponentScan(basePackages = { "de.kimrudolph.akkaflow.services",
-    "de.kimrudolph.akkaflow.actors", "de.kimrudolph.akkaflow.extension" })
+@ComponentScan(basePackages = { "com.glsc.akkaflow.services",
+    "com.glsc.akkaflow.actors", "com.glsc.akkaflow.extension" })
 public class ApplicationConfiguration {
 
     // The application context is needed to initialize the Akka Spring

@@ -1,7 +1,7 @@
-package de.kimrudolph.akkaflow.controller;
+package com.glsc.akkaflow.controller;
 
-import de.kimrudolph.akkaflow.beans.Task;
-import de.kimrudolph.akkaflow.dao.TaskDAO;
+import com.glsc.akkaflow.beans.Task;
+import com.glsc.akkaflow.dao.TaskDAO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;

@@ -1,10 +1,10 @@
-package de.kimrudolph.akkaflow.actors;
+package com.glsc.akkaflow.actors;
 
 import akka.actor.UntypedActor;
 import akka.event.Logging;
 import akka.event.LoggingAdapter;
-import de.kimrudolph.akkaflow.beans.Task;
-import de.kimrudolph.akkaflow.dao.TaskDAO;
+import com.glsc.akkaflow.beans.Task;
+import com.glsc.akkaflow.dao.TaskDAO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Component;

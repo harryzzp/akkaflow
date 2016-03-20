@@ -3,7 +3,7 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>de.kimrudolph</groupId>
+    <groupId>com.glsc</groupId>
     <artifactId>akkaflow</artifactId>
     <version>1.0-SNAPSHOT</version>
     <!-- only use for war packaging -->
@@ -20,7 +20,7 @@
     <parent>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-starter-parent</artifactId>
-        <version>1.3.3.RELEASE</version>
+        <version>${spring-boot-version}</version>
     </parent>
 
     <dependencies>
@@ -156,7 +156,7 @@
                 <artifactId>spring-boot-maven-plugin</artifactId>
                 <version>${spring-boot-version}</version>
                 <configuration>
-                    <mainClass>de.kimrudolph.akkaflow.AkkaApplication</mainClass>
+                    <mainClass>com.glsc.akkaflow.AkkaApplication</mainClass>
                 </configuration>
                 <executions>
                     <execution>

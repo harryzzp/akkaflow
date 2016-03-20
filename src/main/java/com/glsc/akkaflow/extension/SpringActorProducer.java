@@ -1,4 +1,4 @@
-package de.kimrudolph.akkaflow.extension;
+package com.glsc.akkaflow.extension;
 
 import akka.actor.Actor;
 import akka.actor.IndirectActorProducer;

@@ -1,4 +1,4 @@
-package de.kimrudolph.akkaflow.beans;
+package com.glsc.akkaflow.beans;
 
 /**
  * Payload container

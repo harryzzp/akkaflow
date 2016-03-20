@@ -1,4 +1,4 @@
-package de.kimrudolph.akkaflow.controller;
+package com.glsc.akkaflow.controller;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;

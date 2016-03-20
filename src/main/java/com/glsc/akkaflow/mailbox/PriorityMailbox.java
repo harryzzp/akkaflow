@@ -1,10 +1,10 @@
-package de.kimrudolph.akkaflow.mailbox;
+package com.glsc.akkaflow.mailbox;
 
 import akka.actor.ActorSystem;
 import akka.dispatch.PriorityGenerator;
 import akka.dispatch.UnboundedPriorityMailbox;
 import com.typesafe.config.Config;
-import de.kimrudolph.akkaflow.beans.Task;
+import com.glsc.akkaflow.beans.Task;
 
 /**
  * Simple priority queue mapping the task priority to the mailbox priority.

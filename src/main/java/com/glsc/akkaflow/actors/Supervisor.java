@@ -1,4 +1,4 @@
-package de.kimrudolph.akkaflow.actors;
+package com.glsc.akkaflow.actors;
 
 import akka.actor.ActorRef;
 import akka.actor.Terminated;
@@ -9,8 +9,8 @@ import akka.routing.ActorRefRoutee;
 import akka.routing.Routee;
 import akka.routing.Router;
 import akka.routing.SmallestMailboxRoutingLogic;
-import de.kimrudolph.akkaflow.beans.Task;
-import de.kimrudolph.akkaflow.extension.SpringExtension;
+import com.glsc.akkaflow.extension.SpringExtension;
+import com.glsc.akkaflow.beans.Task;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Component;
@@ -20,7 +20,7 @@ import java.util.List;
 
 /**
  * A sample supervisor which should handle exceptions and general feedback
- * for the actual {@link de.kimrudolph.akkaflow.actors.TaskActor}
+ * for the actual {@link TaskActor}
  * <p/>
  * A router is configured at startup time, managing a pool of task actors.
  */

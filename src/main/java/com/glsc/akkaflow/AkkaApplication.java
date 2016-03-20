@@ -1,24 +1,17 @@
-package de.kimrudolph.akkaflow;
+package com.glsc.akkaflow;
 
 
-import akka.actor.ActorContext;
 import akka.actor.ActorRef;
 import akka.actor.ActorSystem;
 import akka.actor.PoisonPill;
 import akka.event.Logging;
 import akka.event.LoggingAdapter;
-import de.kimrudolph.akkaflow.beans.Task;
-import de.kimrudolph.akkaflow.extension.SpringExtension;
+import com.glsc.akkaflow.extension.SpringExtension;
+import com.glsc.akkaflow.beans.Task;
 import org.springframework.boot.SpringApplication;
-import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-import org.springframework.boot.builder.SpringApplicationBuilder;
-import org.springframework.boot.context.web.SpringBootServletInitializer;
 import org.springframework.context.ApplicationContext;
-import org.springframework.context.annotation.ComponentScan;
-import org.springframework.context.annotation.Configuration;
 import org.springframework.jdbc.core.JdbcTemplate;
-import scala.concurrent.Await;
 
 import java.util.Random;
 
@@ -27,7 +20,7 @@ import java.util.Random;
  */
 //@Configuration
 //@EnableAutoConfiguration
-//@ComponentScan("de.kimrudolph.akkaflow.configuration")
+//@ComponentScan("com.glsc.akkaflow.configuration")
 @SpringBootApplication
 public class AkkaApplication /*extends SpringBootServletInitializer*/ {
 
