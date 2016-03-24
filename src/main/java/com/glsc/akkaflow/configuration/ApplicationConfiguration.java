@@ -17,7 +17,7 @@ import java.util.Properties;
 
 @Configuration
 @Lazy
-@ComponentScan(basePackages = { "com.glsc.akkaflow.services",
+@ComponentScan(basePackages = { "com.glsc.akkaflow.controller", "com.glsc.akkaflow.rest",
     "com.glsc.akkaflow.actors", "com.glsc.akkaflow.extension" })
 public class ApplicationConfiguration {
 
