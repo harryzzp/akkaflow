@@ -12,7 +12,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 @RequestMapping("/sample")
 public class SampleController {
 
-    @RequestMapping("index.asp")
+    @RequestMapping("index")
     public String index(Model model,
                         @RequestParam(value = "company", defaultValue = "国联证券") String company) {
         model.addAttribute("company", company);

@@ -10,8 +10,12 @@ import com.glsc.akkaflow.extension.SpringExtension;
 import com.glsc.akkaflow.beans.Task;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.boot.context.embedded.ServletRegistrationBean;
 import org.springframework.context.ApplicationContext;
+import org.springframework.context.annotation.Bean;
 import org.springframework.jdbc.core.JdbcTemplate;
+import org.springframework.web.servlet.DispatcherServlet;
+import org.springframework.web.servlet.config.annotation.EnableWebMvc;
 
 import java.util.Random;
 
@@ -21,8 +25,19 @@ import java.util.Random;
 //@Configuration
 //@EnableAutoConfiguration
 //@ComponentScan("com.glsc.akkaflow.configuration")
+//@EnableWebMvc
 @SpringBootApplication
 public class AkkaApplication /*extends SpringBootServletInitializer*/ {
+
+//    @Bean
+//    public ServletRegistrationBean dispatcherRegistration(DispatcherServlet dispatcherServlet) {
+//        ServletRegistrationBean registration = new ServletRegistrationBean(
+//                dispatcherServlet);
+//        registration.addUrlMappings("*.html");
+//
+//        return registration;
+//    }
+
 
     public static void main(String[] args) throws Exception {
 

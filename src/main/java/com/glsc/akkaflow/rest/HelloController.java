@@ -7,12 +7,12 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 public class HelloController {
     
-    @RequestMapping("/")
+    @RequestMapping("/rest/")
     public String index() {
         return "Greetings from Spring Boot!";
     }
 
-    @RequestMapping(value = "/say")
+    @RequestMapping(value = "/rest/say")
     public String say(@RequestParam(value = "name", required = false, defaultValue = "Jedi") String name) {
         return name + ", greeting from Spring Boot!";
     }
