@@ -25,7 +25,6 @@ import java.util.Random;
 //@Configuration
 //@EnableAutoConfiguration
 //@ComponentScan("com.glsc.akkaflow.configuration")
-//@EnableWebMvc
 @SpringBootApplication
 public class AkkaApplication /*extends SpringBootServletInitializer*/ {
 
@@ -33,7 +32,7 @@ public class AkkaApplication /*extends SpringBootServletInitializer*/ {
 //    public ServletRegistrationBean dispatcherRegistration(DispatcherServlet dispatcherServlet) {
 //        ServletRegistrationBean registration = new ServletRegistrationBean(
 //                dispatcherServlet);
-//        registration.addUrlMappings("*.html");
+//        registration.addUrlMappings("*.html", "*.jpg");
 //
 //        return registration;
 //    }
