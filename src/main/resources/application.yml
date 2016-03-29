@@ -1,6 +1,6 @@
 ## Server settings (ServerProperties)
 server:
-  port: 8080
+  port: 80
   address: 127.0.0.1
   contextPath:
 
