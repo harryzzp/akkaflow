@@ -17,7 +17,7 @@ public class DemoController {
     @Autowired
     private TaskDAO taskDAO;
 
-    @RequestMapping("/greeting")
+    @RequestMapping("/greeting.html")
     public String greeting(@RequestParam(value="name", required=false, defaultValue="World") String name, Model model) {
         model.addAttribute("name", name);
 

@@ -6,16 +6,12 @@ import akka.actor.ActorSystem;
 import akka.actor.PoisonPill;
 import akka.event.Logging;
 import akka.event.LoggingAdapter;
-import com.glsc.akkaflow.extension.SpringExtension;
 import com.glsc.akkaflow.beans.Task;
+import com.glsc.akkaflow.extension.SpringExtension;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-import org.springframework.boot.context.embedded.ServletRegistrationBean;
 import org.springframework.context.ApplicationContext;
-import org.springframework.context.annotation.Bean;
 import org.springframework.jdbc.core.JdbcTemplate;
-import org.springframework.web.servlet.DispatcherServlet;
-import org.springframework.web.servlet.config.annotation.EnableWebMvc;
 
 import java.util.Random;
 
@@ -28,6 +24,7 @@ import java.util.Random;
 //@EnableWebMvc
 @SpringBootApplication
 public class AkkaApplication /*extends SpringBootServletInitializer*/ {
+
 
 //    @Bean
 //    public ServletRegistrationBean dispatcherRegistration(DispatcherServlet dispatcherServlet) {
@@ -42,7 +39,7 @@ public class AkkaApplication /*extends SpringBootServletInitializer*/ {
     public static void main(String[] args) throws Exception {
 
         ApplicationContext context =
-            SpringApplication.run(AkkaApplication.class, args);
+                SpringApplication.run(AkkaApplication.class, args);
 
         ActorSystem system = context.getBean(ActorSystem.class);
 
@@ -54,7 +51,7 @@ public class AkkaApplication /*extends SpringBootServletInitializer*/ {
 
         // Use the Spring Extension to create props for a named actor bean
         ActorRef supervisor = system.actorOf(
-            ext.props("supervisor").withMailbox("akka.priority-mailbox"), "supervisor");
+                ext.props("supervisor").withMailbox("akka.priority-mailbox"), "supervisor");
 
         for (int i = 1; i <= 1000; i++) {
             Task task = new Task("payload " + i, new Random().nextInt(99));
@@ -71,7 +68,7 @@ public class AkkaApplication /*extends SpringBootServletInitializer*/ {
         }
 
         log.info("Created {} tasks", context.getBean(JdbcTemplate.class)
-            .queryForObject("SELECT COUNT(*) FROM tasks", Integer.class));
+                .queryForObject("SELECT COUNT(*) FROM tasks", Integer.class));
 
         log.info("Shutting down");
 
