@@ -29,7 +29,7 @@ public class AkkaApplication /*extends SpringBootServletInitializer*/ {
 //    public ServletRegistrationBean dispatcherRegistration(DispatcherServlet dispatcherServlet) {
 //        ServletRegistrationBean registration = new ServletRegistrationBean(
 //                dispatcherServlet);
-//        registration.addUrlMappings("*.html", "*.jpg");
+//        registration.addUrlMappings("*.html");
 //
 //        return registration;
 //    }
