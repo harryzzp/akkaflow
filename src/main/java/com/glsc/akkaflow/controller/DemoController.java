@@ -20,8 +20,6 @@ public class DemoController {
     @RequestMapping("/greeting.html")
     public String greeting(@RequestParam(value="name", required=false, defaultValue="World") String name, Model model) {
         model.addAttribute("name", name);
-
-
         Task task = new Task("Hi", 10000);
         long number = taskDAO.createTask(task);
         System.out.println("~~~~" + number);
