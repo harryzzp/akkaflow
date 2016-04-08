@@ -1,5 +1,6 @@
 // Akka并发计算实例
 
+import akka.actor.Actor.Receive
 import akka.actor.{Actor, ActorSystem, Props}
 import akka.routing.RoundRobinPool
 
@@ -28,6 +29,29 @@ class SumActor extends Actor {
     case value: Int =>
       sender ! Result(calculate((RANGE / 4) * (value - 1) + 1, (RANGE / 4) * value, value.toString))
     case _ => println("未知 in SumActor...")
+  }
+}
+
+class PrimeActor extends Actor {
+
+  def check(number: Int): Int = {
+    var cal = false
+    for (i <- 2 until number) {
+      if (number % i ==0) {
+        cal = true
+      }
+    }
+    if (cal) {
+      number
+    } else {
+      null
+    }
+  }
+
+  override def receive: Receive = {
+    case value: Int => {
+      sender ! Result(check(value))
+    }
   }
 }
 
